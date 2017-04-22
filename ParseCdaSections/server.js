@@ -1,37 +1,48 @@
 "use strict";
 
+//var Port = process.env.PORT || 8000;
+
 var Http = require("http");
-var Port = process.env.PORT || 1337;
+var Express = require("express");
+var BodyParser = require("body-parser");
+var Swaggerize = require("swaggerize-express");
+var SwaggerUi = require("swaggerize-ui");
+var Path = require("path");
 
-Http.createServer(function(req, res) {
+require("body-parser-xml")(BodyParser);
 
-    var bb = require("blue-button");
+var App = Express();
 
-    if (req.query.id && req.body.XmlDoc) {
+var Server = Http.createServer(App);
 
-        var doc = req.body.XmlDoc;
-        var section = req.query.id;
-
-
-        var result = bb.parseString(doc, { component: section });
-
-        if (result) {
-
-            res.writeHead(200, { 'Content-Type': "application/json", 'x-ms-description': "Success" });
-            res.end(JSON.stringify(result, null, 4));
-
-        } else {
-
-            res.writeHead(400,
-                "Invalid Document Type",
-                { 'Content-Type': "application/json", 'x-ms-description': "Bad Request" });
-            res.end();
-        }
-    } else {
-        res.writeHead(405,
-            "Missing XmlDoc or Section Id",
-            { 'Content-Type': "application/json", 'x-ms-description': "Method No Allowed" });
-        res.end();
+App.use(BodyParser.xml({
+    limit: "1MB",
+    xmlParseOptions: {
+        nomalize: true,
+        normalizeTags: true,
+        explicitArray: false
     }
+}));
 
-}).listen(Port);
+//App.use(BodyParser.urlencoded({
+//    extended: true
+//}));
+
+
+App.use(Swaggerize({
+    api: Path.resolve("./config/swagger.json"),
+    handlers: Path.resolve("./handlers"),
+    docspath: "/swagger"
+}));
+
+App.use("/docs",
+    SwaggerUi({
+        docs: "/swagger"
+    }));
+
+Server.listen(8000, function() {
+    App.swagger.api.host = this.address().address + ":" + this.address().port;
+    /* eslint-disable no-console */
+    console.log("App running on %s:%d", this.address().address, this.address().port);
+    /* eslint-disable no-console */
+ });

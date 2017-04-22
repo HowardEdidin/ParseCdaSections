@@ -1,0 +1,80 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Parses CCD to JSON",
+        "version": "1.0.0",
+        "title": "CCD Section API",
+        "contact": {
+            "email": "hedidin@edidingroup.net"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "tags": [
+        {
+            "name": "section",
+            "description": "CDA Section"
+        }
+    ],
+    "basePath": "/v1",
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "/section/{id}": {
+            "post": {
+                "tags": [
+                    "section"
+                ],
+                "summary": "Creates a Json document for CCD Section",
+                "operationId": "GetCCDSection",
+                "description": "Creates a Json document for CCD Section",
+                "consumes": [
+                    "application/xml",
+                    "text/xml"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "XmlDoc",
+                        "required": true,
+                        "description": "XML Document",
+                        "x-ms-summary": "XML Document",
+                        "schema": {
+                            "$ref": "#/definitions/ClinicalDocument"
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "description": "Section Name",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "item created",
+                        "x-ms-summary": "item created",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid input, object invalid"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "ClinicalDocument": {
+            "type": "object"
+        }
+    }
+}

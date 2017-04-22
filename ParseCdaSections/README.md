@@ -1,3 +1,3 @@
-﻿# ParseCdaSections
+# parsecdasections
 
-Parses a section from the CDA
+Swagger api [location](./config/swagger.json)

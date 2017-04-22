@@ -28,8 +28,13 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="data\mockgen.js" />
+    <Compile Include="data\section\{id}.js" />
+    <Compile Include="handlers\section\{id}.js" />
     <Compile Include="server.js" />
+    <Compile Include="tests\section\{id}.js" />
     <Content Include="api.json" />
+    <Content Include="config\swagger.json" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config" />
     <Content Include="bin\ChangeConfig.ps1" />
@@ -41,6 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="config\" />
+    <Folder Include="data\" />
+    <Folder Include="data\section\" />
+    <Folder Include="handlers\" />
+    <Folder Include="handlers\section\" />
+    <Folder Include="tests\" />
+    <Folder Include="tests\section\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

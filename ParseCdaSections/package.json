@@ -11,6 +11,14 @@
     "blue-button-meta": "^1.7.0",
     "blue-button-model": "^1.10.0",
     "blue-button-xml": "^1.8.0",
-    "jsonapter": "^1.0.13"
+    "body-parser": "^1.17.1",
+    "body-parser-xml": "^1.1.0",
+    "jsonapter": "^1.0.13",
+    "jsonpath": "^0.2.11",
+    "path": "^0.12.7",
+    "save": "^2.3.0",
+    "swaggerize-express": "^4.0.5",
+    "swaggerize-ui": "^1.0.1",
+    "swagmock": "^1.0.0"
   }
 }
