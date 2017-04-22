@@ -1,0 +1,9 @@
+{
+  "name": "parse-cda-sections",
+  "version": "0.0.0",
+  "description": "ParseCdaSections",
+  "main": "server.js",
+  "author": {
+    "name": "hse"
+  }
+}

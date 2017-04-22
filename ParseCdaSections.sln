@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ParseCdaSections", "ParseCdaSections\ParseCdaSections.njsproj", "{520F206A-8CD7-4C79-A411-13E15967AC1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{520F206A-8CD7-4C79-A411-13E15967AC1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{520F206A-8CD7-4C79-A411-13E15967AC1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{520F206A-8CD7-4C79-A411-13E15967AC1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{520F206A-8CD7-4C79-A411-13E15967AC1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(CodealikeProperties) = postSolution
+		SolutionGuid = e4ece43f-21d4-48e0-82ef-4bd1935ed123
+	EndGlobalSection
+EndGlobal
