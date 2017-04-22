@@ -1,9 +1,16 @@
 {
   "name": "parse-cda-sections",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "ParseCdaSections",
   "main": "server.js",
   "author": {
-    "name": "hse"
+    "name": "Howard S. Edidin"
+  },
+  "dependencies": {
+    "blue-button": "^1.10.1",
+    "blue-button-meta": "^1.7.0",
+    "blue-button-model": "^1.10.0",
+    "blue-button-xml": "^1.8.0",
+    "jsonapter": "^1.0.13"
   }
 }
